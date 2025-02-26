@@ -1,7 +1,6 @@
-package org.gomework;
+package org.homework;
 
 import org.hamcrest.Matchers;
-import org.homework.TasteByID;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
