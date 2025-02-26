@@ -1,0 +1,414 @@
+{
+	"info": {
+		"_postman_id": "7ce63bf4-b8c6-4a11-be19-61b45f040a23",
+		"name": "HW_3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "38258972"
+	},
+	"item": [
+		{
+			"name": "Search Recipes",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": {
+						"value": "43938b20295f407785f21b241225be2a",
+						"key": "apiKey",
+						"in": "query"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}complexSearch?{{query}}pasta&{{minCarbs}}20&{{number}}5",
+					"host": [
+						"{{baseUrl}}complexSearch"
+					],
+					"query": [
+						{
+							"key": "{{query}}pasta",
+							"value": null
+						},
+						{
+							"key": "{{minCarbs}}20",
+							"value": null
+						},
+						{
+							"key": "{{number}}5",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Recipes by Nutrients",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": {
+						"value": "43938b20295f407785f21b241225be2a",
+						"key": "apiKey",
+						"in": "query"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}findByNutrients?{{minCarbs}}5&{{maxCarbs}}20&{{number}}10",
+					"host": [
+						"{{baseUrl}}findByNutrients"
+					],
+					"query": [
+						{
+							"key": "{{minCarbs}}5",
+							"value": null
+						},
+						{
+							"key": "{{maxCarbs}}20",
+							"value": null
+						},
+						{
+							"key": "{{number}}10",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Recipes by Ingredients",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": {
+						"value": "43938b20295f407785f21b241225be2a",
+						"key": "apiKey",
+						"in": "query"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}findByIngredients?ingredients=oranges,+meal,+sugar&{{number}}3",
+					"host": [
+						"{{baseUrl}}findByIngredients"
+					],
+					"query": [
+						{
+							"key": "ingredients",
+							"value": "oranges,+meal,+sugar"
+						},
+						{
+							"key": "{{number}}3",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Recipe Information",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": {
+						"value": "43938b20295f407785f21b241225be2a",
+						"key": "apiKey",
+						"in": "query"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "{{baseUrl}}{{id}}/information"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Recipe Information Bulk",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": {
+						"value": "43938b20295f407785f21b241225be2a",
+						"key": "apiKey",
+						"in": "query"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}informationBulk?ids=715538,716429",
+					"host": [
+						"{{baseUrl}}informationBulk"
+					],
+					"query": [
+						{
+							"key": "ids",
+							"value": "715538,716429"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Similar Recipes",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": {
+						"value": "43938b20295f407785f21b241225be2a",
+						"key": "apiKey",
+						"in": "query"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "{{baseUrl}}{{id}}/similar"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Random Recipes",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": {
+						"value": "43938b20295f407785f21b241225be2a",
+						"key": "apiKey",
+						"in": "query"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}random?{{number}}1&include-tags=vegeterian,dessert&exclude-tags=quinoa",
+					"host": [
+						"{{baseUrl}}random"
+					],
+					"query": [
+						{
+							"key": "{{number}}1",
+							"value": null
+						},
+						{
+							"key": "include-tags",
+							"value": "vegeterian,dessert"
+						},
+						{
+							"key": "exclude-tags",
+							"value": "quinoa"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Autocomplete Recipe Search",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": {
+						"value": "43938b20295f407785f21b241225be2a",
+						"key": "apiKey",
+						"in": "query"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}autocomplete?{{number}}5&query=chick",
+					"host": [
+						"{{baseUrl}}autocomplete"
+					],
+					"query": [
+						{
+							"key": "{{number}}5",
+							"value": null
+						},
+						{
+							"key": "query",
+							"value": "chick"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Taste by ID",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": {
+						"value": "43938b20295f407785f21b241225be2a",
+						"key": "apiKey",
+						"in": "query"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "{{baseUrl}}{{id}}/tasteWidget.json"
+			},
+			"response": []
+		},
+		{
+			"name": "Equipment by ID",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": {
+						"value": "43938b20295f407785f21b241225be2a",
+						"key": "apiKey",
+						"in": "query"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "{{baseUrl}}{{id}}/equipmentWidget.json"
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": {
+			"key": "apikey",
+			"value": "43938b20295f407785f21b241225be2a",
+			"in": "query"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"pm.test(\"Status code is 200\", function(){\r",
+					"    pm.response.to.have.status(200)\r",
+					"})\r",
+					"\r",
+					"pm.test(\"Response time is less than 1000ms\", function(){\r",
+					"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+					"})"
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://api.spoonacular.com/recipes/",
+			"type": "string"
+		},
+		{
+			"key": "query",
+			"value": "query=",
+			"type": "string"
+		},
+		{
+			"key": "cuisine",
+			"value": "cuisine=",
+			"type": "string"
+		},
+		{
+			"key": "excludeCuisine",
+			"value": "excludeCuisine=",
+			"type": "string"
+		},
+		{
+			"key": "diet",
+			"value": "diet=",
+			"type": "string"
+		},
+		{
+			"key": "intolerances",
+			"value": "intolerances=",
+			"type": "string"
+		},
+		{
+			"key": "minCarbs",
+			"value": "minCarbs=",
+			"type": "string"
+		},
+		{
+			"key": "maxCarbs",
+			"value": "maxCarbs=",
+			"type": "string"
+		},
+		{
+			"key": "minAlcohol",
+			"value": "minAlcohol=",
+			"type": "string"
+		},
+		{
+			"key": "maxAlcohol",
+			"value": "maxAlcohol=",
+			"type": "string"
+		},
+		{
+			"key": "number",
+			"value": "number=",
+			"type": "string"
+		},
+		{
+			"key": "id",
+			"value": "702060",
+			"type": "string"
+		}
+	]
+}
